@@ -34,7 +34,7 @@ private val retrofit = Retrofit.Builder()
 /**
  * A public interface that exposes the [Movie] method
  */
-interface SukuTvApiService {
+interface ApiService {
     /**
      * Returns the [List] of [Movie] and
      * this method can be called from a Coroutine.
@@ -109,8 +109,8 @@ interface SukuTvApiService {
  * A public Api object that exposes
  * the lazy-initialized Retrofit service
  */
-object SukuTvApi {
-    val retrofitService: SukuTvApiService by lazy {
-        retrofit.create(SukuTvApiService::class.java)
+object Api {
+    val retrofitService: ApiService by lazy {
+        retrofit.create(ApiService::class.java)
     }
 }

@@ -7,7 +7,7 @@ import com.sample.movienews.R
 import com.sample.movienews.database.MovieDao
 import com.sample.movienews.models.Movie
 import com.sample.movienews.models.Video
-import com.sample.movienews.network.SukuTvApi
+import com.sample.movienews.network.Api
 import com.sample.movienews.utils.Constant.DATE_FORMAT
 import com.sample.movienews.utils.Constant.POPULAR_MOVIE
 import com.sample.movienews.utils.Constant.TOP_RATED_MOVIE
@@ -145,7 +145,7 @@ class MainViewModel(private var movieDao: MovieDao) : ViewModel() {
         _moviesStatus.value = RequestsStatus.LOADING
         viewModelScope.launch {
             try {
-                val movie = SukuTvApi.retrofitService
+                val movie = Api.retrofitService
                     .getMovieDetails(id, languageCode)
 
                 val localMovie = movieDao.getMovie(id.toInt())
@@ -195,7 +195,7 @@ class MainViewModel(private var movieDao: MovieDao) : ViewModel() {
         _moviesStatus.value = RequestsStatus.LOADING
         viewModelScope.launch {
             try {
-                val response = SukuTvApi.retrofitService
+                val response = Api.retrofitService
                     .getMovies(type, languageCode, page)
 
                 val list: MutableList<Movie>
@@ -239,7 +239,7 @@ class MainViewModel(private var movieDao: MovieDao) : ViewModel() {
         _upComingMoviesStatus.value = RequestsStatus.LOADING
         viewModelScope.launch {
             try {
-                _upComingMovies.value = SukuTvApi.retrofitService
+                _upComingMovies.value = Api.retrofitService
                     .getMovies(type, languageCode, 1)
                     .results?.filter {
                         Date().before(
@@ -264,7 +264,7 @@ class MainViewModel(private var movieDao: MovieDao) : ViewModel() {
         _popularMoviesStatus.value = RequestsStatus.LOADING
         viewModelScope.launch {
             try {
-                _popularMovies.value = SukuTvApi.retrofitService
+                _popularMovies.value = Api.retrofitService
                     .getMovies(type, languageCode, 1)
                     .results ?: listOf()
                 _popularMoviesStatus.value = RequestsStatus.DONE
@@ -284,7 +284,7 @@ class MainViewModel(private var movieDao: MovieDao) : ViewModel() {
         _topRatedMoviesStatus.value = RequestsStatus.LOADING
         viewModelScope.launch {
             try {
-                _topRatedMovies.value = SukuTvApi.retrofitService
+                _topRatedMovies.value = Api.retrofitService
                     .getMovies(type, languageCode, 1)
                     .results ?: listOf()
                 _topRatedMoviesStatus.value = RequestsStatus.DONE
@@ -306,7 +306,7 @@ class MainViewModel(private var movieDao: MovieDao) : ViewModel() {
         viewModelScope.launch {
             try {
                 if (query.isNotEmpty()) {
-                    val response = SukuTvApi.retrofitService
+                    val response = Api.retrofitService
                         .search(
                             languageCode,
                             query,
@@ -392,7 +392,7 @@ class MainViewModel(private var movieDao: MovieDao) : ViewModel() {
         _recommendedMoviesStatus.value = RequestsStatus.LOADING
         viewModelScope.launch {
             try {
-                val recommendations = SukuTvApi.retrofitService
+                val recommendations = Api.retrofitService
                     .recommendations(
                         "$id",
                         languageCode,
@@ -413,7 +413,7 @@ class MainViewModel(private var movieDao: MovieDao) : ViewModel() {
         _moviesStatus.value = RequestsStatus.LOADING
         viewModelScope.launch {
             try {
-                val videos = SukuTvApi.retrofitService
+                val videos = Api.retrofitService
                     .videos(id!!, languageCode).results
 
                 _moviesStatus.value = RequestsStatus.DONE
