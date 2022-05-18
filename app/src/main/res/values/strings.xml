@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SukuTv</string>
+    <string name="app_name">Movie News</string>
 
     <string name="upcoming_movies_section_title">Up coming</string>
     <string name="popular_movies_section_title">Popular</string>
