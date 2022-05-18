@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.HomeFragment">
+
+    <data>
+        <variable
+            name="movie"
+            type="com.sample.movienews.models.Movie"
+            />
+
+        <variable
+            name="viewModel"
+            type="com.sample.movienews.viewModel.MainViewModel"
+            />
+    </data>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:overScrollMode="never"
+        android:background="@null">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_margin="10dp"
+            android:gravity="center">
+
+            <!-- Up coming movies section -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp">
+
+                <TextView
+                    android:id="@+id/tv_upcoming_movies_section_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/upcoming_movies_section_title"
+                    android:textSize="15sp"
+                    android:textColor="@color/gray_800"
+                    android:fontFamily="@font/roboto_medium"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_more_up_coming_movies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/more_button_label"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/pink_500"
+                    app:layout_constraintTop_toTopOf="@+id/tv_upcoming_movies_section_title"
+                    app:layout_constraintBottom_toTopOf="@+id/up_coming_movies"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginEnd="5dp"
+                    app:drawableRightCompat="@drawable/ic_arrow_right"
+                    app:drawableTint="@color/pink_500" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/up_coming_movies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_upcoming_movies_section_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:listitem="@layout/home_linear_view_item"
+                    app:upComingMoviesData="@{viewModel.upComingMovies}"
+                    android:clipToPadding="false"
+                    />
+
+                <ImageView
+                    android:id="@+id/up_coming_movies_status_image"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_upcoming_movies_section_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:moviesApiStatus="@{viewModel.upComingMoviesStatus}"
+                    android:contentDescription="@string/up_coming_movie_image_content_description"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Popular movies section -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp">
+
+                <TextView
+                    android:id="@+id/tv_popular_movies_section_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/popular_movies_section_title"
+                    android:textSize="15sp"
+                    android:textColor="@color/gray_800"
+                    android:fontFamily="@font/roboto_medium"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_more_popular_movies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/more_button_label"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/pink_500"
+                    app:layout_constraintTop_toTopOf="@+id/tv_popular_movies_section_title"
+                    app:layout_constraintBottom_toTopOf="@+id/popular_movies"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="5dp"
+                    app:drawableRightCompat="@drawable/ic_arrow_right"
+                    app:drawableTint="@color/pink_500"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/popular_movies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_popular_movies_section_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:listitem="@layout/home_linear_view_item"
+                    app:popularMoviesData="@{viewModel.popularMovies}"
+                    android:clipToPadding="false"
+                    />
+
+                <ImageView
+                    android:id="@+id/popular_section_status_image"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_popular_movies_section_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:moviesApiStatus="@{viewModel.popularMoviesStatus}"
+                    android:contentDescription="@string/popular_movie_image_content_description"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <!-- Top rated movies section -->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
+
+                <TextView
+                    android:id="@+id/tv_top_rated_movies_section_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/top_rated_movies_section_title"
+                    android:textSize="15sp"
+                    android:textColor="@color/gray_800"
+                    android:fontFamily="@font/roboto_medium"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_more_top_rated_movies"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/more_button_label"
+                    android:fontFamily="@font/roboto_medium"
+                    android:textSize="15sp"
+                    android:textAllCaps="false"
+                    android:textColor="@color/pink_500"
+                    app:layout_constraintTop_toTopOf="@+id/tv_top_rated_movies_section_title"
+                    app:layout_constraintBottom_toTopOf="@+id/top_rated_movies"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    android:layout_marginBottom="5dp"
+                    android:layout_marginEnd="5dp"
+                    app:drawableRightCompat="@drawable/ic_arrow_right"
+                    app:drawableTint="@color/pink_500"
+                    />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/top_rated_movies"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    android:orientation="horizontal"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_top_rated_movies_section_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:listitem="@layout/home_linear_view_item"
+                    app:topRatedMoviesData="@{viewModel.topRatedMovies}"
+                    android:clipToPadding="false"
+                    />
+
+                <ImageView
+                    android:id="@+id/top_rated_movies_status_image"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:scaleType="fitXY"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_top_rated_movies_section_title"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:moviesApiStatus="@{viewModel.topRatedMoviesStatus}"
+                    android:contentDescription="@string/top_rated_movie_image_content_description"
+                    />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</layout>

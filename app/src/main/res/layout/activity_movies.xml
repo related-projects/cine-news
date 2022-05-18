@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ui.activities.MoviesActivity">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.sample.movienews.viewModel.MainViewModel"
+            />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@null">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/topAppBar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:titleCentered="true"
+                app:title="@{viewModel.activityTitle}"
+                app:titleTextColor="@color/pink_500"
+                app:navigationIcon="@drawable/ic_back_arrow"
+                app:navigationIconTint="@color/pink_500"
+                style="@style/Widget.MaterialComponents.Toolbar.Surface"
+                />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/movies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/app_bar_layout"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="@integer/span_count"
+            android:orientation="vertical"
+            app:moviesData="@{viewModel.movies}"
+            tools:listitem="@layout/home_linear_view_item"
+            android:clipToPadding="false"
+            android:overScrollMode="ifContentScrolls"
+            />
+
+        <ImageView
+            android:id="@+id/movies_status"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerInParent="true"
+            android:scaleType="fitXY"
+            app:moviesApiStatus="@{viewModel.moviesStatus}"
+            android:contentDescription="@string/up_coming_movie_image_content_description"
+            />
+
+    </RelativeLayout>
+
+</layout>

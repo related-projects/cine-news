@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="movie_release_date_title">"Release date: "</string>
+    <string name="watch_trailer_button">Watch Trailer</string>
+</resources>

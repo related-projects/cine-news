@@ -1,0 +1,45 @@
+<resources>
+    <string name="app_name">SukuTv</string>
+
+    <string name="upcoming_movies_section_title">Up coming</string>
+    <string name="popular_movies_section_title">Popular</string>
+    <string name="more_button_label">See all</string>
+    <string name="top_rated_movies_section_title">Top rated</string>
+    <string name="home_navigation_menu_title">Home</string>
+    <string name="tv_show_navigation_menu_title">Tv show</string>
+    <string name="favorite_navigation_menu_title">Favorite</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="top_rated_movie_image_content_description">Top rated movie image</string>
+    <string name="popular_movie_image_content_description">Popular movie image</string>
+    <string name="up_coming_movie_image_content_description">Up coming movie image</string>
+    <string name="poster_of_the_movie">Poster of the movie</string>
+    <string name="search">Search icon title</string>
+    <string name="content_description_search">Search icon content description</string>
+    <string name="like">Like</string>
+    <string name="content_description_like">Like menu icon</string>
+    <string name="synopsis_title_text">Synopsis</string>
+    <string name="movie_genre_title">Genre:</string>
+    <string name="movie_duration_title">Duration</string>
+    <string name="movie_rating_title">Rating</string>
+    <string name="movie_detail_screen_title">Movie Detail</string>
+    <string name="search_home_navigation_title">Search</string>
+    <string name="search_movie_info_text">Please, enter the name of the movie to search for it.</string>
+    <string name="searched_movie_content_description">Searched movie</string>
+    <string name="empty_favorite_list_warning_text">Add a movie as favorite to see it here.</string>
+    <string name="read_more_text">read more</string>
+    <string name="read_less_text">read less</string>
+    <string name="search_movie_field_hint">Search movie…</string>
+    <string name="movie_status_title">Status</string>
+    <string name="original_title_text">Original title:</string>
+    <string name="original_language_title_text">Original language:</string>
+    <string name="movie_budget_title">Budget:</string>
+    <string name="movie_revenue_title">Revenue:</string>
+    <string name="empty_overview_warning">Not synopsis found!</string>
+    <string name="recommendations_section_title">Recommendations</string>
+    <string name="recommended_movies_status_image">Recommended movies status image</string>
+    <string name="movie_release_date_title">"Release date: "</string>
+    <string name="watch_trailer_button">Watch Trailer</string>
+    <string name="youtube_video_link" translatable="false">https://www.youtube.com/watch?v=%s</string>
+    <string name="vimeo_link" translatable="false">https://vimeo.com/%s</string>
+</resources>
