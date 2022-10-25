@@ -1,4 +1,4 @@
-MovieNews
+Cine-News
 ==================================
 
 Key features
