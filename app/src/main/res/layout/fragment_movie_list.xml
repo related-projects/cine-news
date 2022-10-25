@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    tools:context=".ui.activities.MoviesActivity">
+    tools:context=".ui.MovieListFragment">
 
     <data>
         <variable
@@ -26,11 +26,11 @@
                 android:id="@+id/topAppBar"
                 android:layout_width="match_parent"
                 android:layout_height="?attr/actionBarSize"
-                app:titleCentered="true"
                 app:title="@{viewModel.activityTitle}"
                 app:titleTextColor="@color/pink_500"
                 app:navigationIcon="@drawable/ic_back_arrow"
                 app:navigationIconTint="@color/pink_500"
+                android:elevation="0dp"
                 style="@style/Widget.MaterialComponents.Toolbar.Surface"
                 />
 

@@ -17,16 +17,6 @@
             android:exported="false"
             android:screenOrientation="landscape"/>
         <activity
-            android:name="com.sample.movienews.ui.activities.MovieDetailsActivity"
-            android:configChanges="screenLayout|screenSize|orientation"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
-            android:name="com.sample.movienews.ui.activities.MoviesActivity"
-            android:configChanges="screenLayout|screenSize|orientation"
-            android:exported="false"
-            android:windowSoftInputMode="adjustResize" />
-        <activity
             android:name="com.sample.movienews.MainActivity"
             android:configChanges="screenLayout|screenSize|orientation"
             android:exported="true"

@@ -20,4 +20,7 @@ object Constant {
     // Video site name
     const val YOUTUBE_VIDEO = "youtube"
     const val VIMEO_VIDEO = "vimeo"
+
+    const val MOVIE_LIST = "movie_list"
+    const val PARENT_FRAG = "parent_frag"
 }

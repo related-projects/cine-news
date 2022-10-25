@@ -9,8 +9,10 @@
         <entry key="app/src/main/res/drawable/bottom_nav_item_decoration.xml" value="0.1275" />
         <entry key="app/src/main/res/drawable/ic_add_favorite.xml" value="0.1275" />
         <entry key="app/src/main/res/drawable/ic_back_icon.xml" value="0.1275" />
+        <entry key="app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.12" />
         <entry key="app/src/main/res/drawable/ic_close.xml" value="0.1205" />
         <entry key="app/src/main/res/drawable/ic_favorite_added.xml" value="0.1275" />
+        <entry key="app/src/main/res/drawable/ic_home_menu_icon.xml" value="0.12" />
         <entry key="app/src/main/res/drawable/ic_loading_anim.xml" value="0.1205" />
         <entry key="app/src/main/res/drawable/ic_loading_img.xml" value="0.1205" />
         <entry key="app/src/main/res/drawable/ic_search.xml" value="0.1275" />
@@ -23,11 +25,16 @@
         <entry key="app/src/main/res/layout/activity_movies.xml" value="0.2" />
         <entry key="app/src/main/res/layout/activity_nav_movie.xml" value="0.14175724637681159" />
         <entry key="app/src/main/res/layout/activity_watcher.xml" value="0.12" />
+        <entry key="app/src/main/res/layout/fragment_favorite_container.xml" value="0.12537993920972645" />
         <entry key="app/src/main/res/layout/fragment_favorites.xml" value="0.18" />
-        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.25" />
-        <entry key="app/src/main/res/layout/fragment_movie_details.xml" value="0.12537993920972645" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/fragment_home_container.xml" value="0.14175724637681159" />
+        <entry key="app/src/main/res/layout/fragment_movie_details.xml" value="0.25" />
         <entry key="app/src/main/res/layout/fragment_movie_list.xml" value="0.12537993920972645" />
+        <entry key="app/src/main/res/layout/fragment_notification.xml" value="0.14175724637681159" />
+        <entry key="app/src/main/res/layout/fragment_profile.xml" value="0.14175724637681159" />
         <entry key="app/src/main/res/layout/fragment_search.xml" value="0.12537993920972645" />
+        <entry key="app/src/main/res/layout/fragment_settings.xml" value="0.14175724637681159" />
         <entry key="app/src/main/res/layout/fragment_tv_show.xml" value="0.22" />
         <entry key="app/src/main/res/layout/fragment_tv_show_deatils.xml" value="0.12537993920972645" />
         <entry key="app/src/main/res/layout/fragment_tv_show_list.xml" value="0.12537993920972645" />

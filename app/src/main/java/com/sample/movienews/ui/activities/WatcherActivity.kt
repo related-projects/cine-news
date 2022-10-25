@@ -11,8 +11,6 @@ import android.webkit.*
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import com.sample.movienews.databinding.ActivityWatcherBinding
-import com.sample.movienews.ui.activities.MovieDetailsActivity.Companion.NAME
-import com.sample.movienews.ui.activities.MovieDetailsActivity.Companion.SITE
 
 class WatcherActivity : AppCompatActivity() {
 
@@ -32,8 +30,8 @@ class WatcherActivity : AppCompatActivity() {
     @SuppressLint("SetJavaScriptEnabled")
     private fun init() {
         try {
-            name = "${intent.getStringExtra(NAME)}"
-            link = "${intent.getStringExtra(SITE)}"
+//            name = "${intent.getStringExtra(NAME)}"
+//            link = "${intent.getStringExtra(SITE)}"
 
             binding.topAppBar.title = name
 

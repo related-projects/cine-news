@@ -19,15 +19,15 @@
         android:id="@+id/bottom_navigation_bar"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50dp"
-        android:layout_margin="@dimen/_5dp"
+        app:elevation="@dimen/_10dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/white"
+        android:background="@color/pink_500"
         app:menu="@menu/bottom_navigation_menu"
         app:itemIconTint="@drawable/bottom_nav_item_decoration"
         app:itemTextColor="@drawable/bottom_nav_item_decoration"
         app:itemRippleColor="@null"
         app:itemIconSize="@dimen/_25dp"
-        app:labelVisibilityMode="unlabeled"
+        app:labelVisibilityMode="selected"
         />
 
 </RelativeLayout>

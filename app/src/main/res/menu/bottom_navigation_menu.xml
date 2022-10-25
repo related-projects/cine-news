@@ -7,14 +7,19 @@
         android:title="@string/home_navigation_menu_title"
         android:icon="@drawable/ic_home_menu_icon"/>
     <item
-        android:id="@+id/search_menu"
+        android:id="@+id/tv_show"
         android:enabled="true"
-        android:title="@string/search_home_navigation_title"
-        android:icon="@drawable/ic_search"/>
+        android:title="@string/tv_show_navigation_menu_title"
+        android:icon="@drawable/ic_tv_show_menu_icon"/>
     <item
         android:id="@+id/favorite"
         android:enabled="true"
         android:title="@string/favorite_navigation_menu_title"
         android:icon="@drawable/ic_favorite_menu_icon"/>
+    <item
+        android:id="@+id/settings"
+        android:enabled="true"
+        android:title="@string/settings_navigation_menu_title"
+        android:icon="@drawable/ic_baseline_settings_24" />
 
 </menu>
