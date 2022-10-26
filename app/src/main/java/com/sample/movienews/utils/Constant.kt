@@ -4,6 +4,8 @@ object Constant {
 
     const val MOVIE_IMAGE_BASE_URL = "https://image.tmdb.org/t/p/w300"
 
+    const val CINE_NEWS_API_KEY = "AIzaSyDubJlc_qdQ7xjrAVVmeiYtR9RgQfrl8es"
+
     const val DATE_FORMAT = "yyyy-MM-dd"
 
     const val COLLAPSE_MAX_LINES = 3
@@ -23,4 +25,7 @@ object Constant {
 
     const val MOVIE_LIST = "movie_list"
     const val PARENT_FRAG = "parent_frag"
+    const val NAME = "name"
+    const val SITE = "site"
+    const val REQUEST_CODE = 12
 }

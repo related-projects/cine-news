@@ -1,6 +1,7 @@
 package com.sample.movienews.ui
 
 import android.animation.LayoutTransition
+import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
 import android.util.Log
@@ -17,12 +18,15 @@ import com.sample.movienews.R
 import com.sample.movienews.app.BaseApp
 import com.sample.movienews.databinding.FragmentMovieDetailsBinding
 import com.sample.movienews.models.Movie
+import com.sample.movienews.ui.activities.WatcherActivity
 import com.sample.movienews.ui.adapters.MoviesAdapter
 import com.sample.movienews.utils.Constant
 import com.sample.movienews.utils.Constant.MOVIES_TYPE_KEY
 import com.sample.movienews.utils.Constant.MOVIE_ID_KEY
+import com.sample.movienews.utils.Constant.NAME
 import com.sample.movienews.utils.Constant.PARENT_FRAG
-import com.sample.movienews.utils.Utils
+import com.sample.movienews.utils.Constant.REQUEST_CODE
+import com.sample.movienews.utils.Constant.SITE
 import com.sample.movienews.utils.Utils.getDefaultLanguageCode
 import com.sample.movienews.utils.canBeExpanded
 import com.sample.movienews.viewModel.MainViewModel
@@ -38,7 +42,7 @@ class MovieDetailsFragment : Fragment(), MoviesAdapter.OnMovieClickedListener {
 
     private lateinit var movieID: String
     private lateinit var videoName: String
-    private lateinit var videoLink: String
+    private lateinit var videoKey: String
     private lateinit var currentMovie: Movie
     private lateinit var popupFrom: String
     private var isOverViewCollapse = true
@@ -120,6 +124,7 @@ class MovieDetailsFragment : Fragment(), MoviesAdapter.OnMovieClickedListener {
                 }
 
                 trailerButton.setOnClickListener {
+                    launchWatcherActivity()
                     // TODO: Implement youtube SDK to watch trailers
                 }
 
@@ -171,11 +176,11 @@ class MovieDetailsFragment : Fragment(), MoviesAdapter.OnMovieClickedListener {
                     if (it != null) {
                         videoName = "${it.name}"
                         if (it.site?.lowercase().equals(Constant.YOUTUBE_VIDEO)) {
-                            videoLink = getString(R.string.youtube_video_link, "${it.key}")
+                            videoKey = "${it.key}"
+                            binding.trailerButton.visibility = View.VISIBLE
                         } else if (it.site?.lowercase().equals(Constant.VIMEO_VIDEO)) {
-                            videoLink = getString(R.string.vimeo_link, "${it.key}")
+                            videoKey = getString(R.string.vimeo_link, "${it.key}")
                         }
-                        binding.trailerButton.visibility = View.VISIBLE
                     }
                 }
 
@@ -239,10 +244,10 @@ class MovieDetailsFragment : Fragment(), MoviesAdapter.OnMovieClickedListener {
         }
     }
 
-    /*private fun launchWatcherActivity() {
-        val intent = Intent(this, WatcherActivity::class.java)
-        intent.putExtra(MovieDetailsActivity.NAME, videoName)
-        intent.putExtra(MovieDetailsActivity.SITE, videoLink)
-        startActivityIfNeeded(intent, MovieDetailsActivity.REQUEST_CODE)
-    }*/
+    private fun launchWatcherActivity() {
+        val intent = Intent(requireActivity(), WatcherActivity::class.java)
+        intent.putExtra(NAME, videoName)
+        intent.putExtra(SITE, videoKey)
+        requireActivity().startActivityIfNeeded(intent, REQUEST_CODE)
+    }
 }

@@ -15,8 +15,9 @@
         <activity
             android:name="com.sample.movienews.ui.activities.WatcherActivity"
             android:supportsPictureInPicture="true"
-            android:exported="false"
-            android:screenOrientation="screenSize|smallestScreenSize|screenLayout|orientation"
+            android:launchMode="singleTask"
+            android:exported="true"
+            android:configChanges="screenSize|smallestScreenSize|screenLayout|orientation"
             />
         <activity
             android:name="com.sample.movienews.MainActivity"

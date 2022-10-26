@@ -43,4 +43,8 @@
     <string name="youtube_video_link" translatable="false">https://www.youtube.com/watch?v=%s</string>
     <string name="vimeo_link" translatable="false">https://vimeo.com/%s</string>
     <string name="settings_navigation_menu_title">Settings</string>
+    <string name="clear">Clear</string>
+    <string name="start">Start</string>
+    <string name="pause">Pause</string>
+    <string name="enter_picture_in_picture">Enter Picture-in-Picture mode</string>
 </resources>

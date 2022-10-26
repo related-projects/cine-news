@@ -7,14 +7,14 @@
 
 
     <LinearLayout
-        android:width="wrap_content"
-        android:height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:orientation="vertical"
         android:gravity="center">
 
         <TextView
-            android:width="wrap_content"
-            android:height="wrap_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:text="TvShow screen..."
             />
 
