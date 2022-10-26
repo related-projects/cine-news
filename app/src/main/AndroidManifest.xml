@@ -14,8 +14,10 @@
         android:theme="@style/Theme.MovieNews">
         <activity
             android:name="com.sample.movienews.ui.activities.WatcherActivity"
+            android:supportsPictureInPicture="true"
             android:exported="false"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="screenSize|smallestScreenSize|screenLayout|orientation"
+            />
         <activity
             android:name="com.sample.movienews.MainActivity"
             android:configChanges="screenLayout|screenSize|orientation"

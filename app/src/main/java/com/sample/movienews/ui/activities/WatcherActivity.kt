@@ -27,6 +27,8 @@ class WatcherActivity : AppCompatActivity() {
         initListener()
     }
 
+
+
     @SuppressLint("SetJavaScriptEnabled")
     private fun init() {
         try {
