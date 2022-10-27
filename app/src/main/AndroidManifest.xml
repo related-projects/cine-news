@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MovieNews">
         <activity
-            android:name="com.sample.movienews.ui.activities.WatcherActivity"
+            android:name="com.sample.movienews.ui.activities.TrailerPlayerActivity"
             android:supportsPictureInPicture="true"
             android:launchMode="singleTask"
             android:exported="true"

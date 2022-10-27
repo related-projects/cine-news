@@ -18,7 +18,7 @@ import com.sample.movienews.R
 import com.sample.movienews.app.BaseApp
 import com.sample.movienews.databinding.FragmentMovieDetailsBinding
 import com.sample.movienews.models.Movie
-import com.sample.movienews.ui.activities.WatcherActivity
+import com.sample.movienews.ui.activities.TrailerPlayerActivity
 import com.sample.movienews.ui.adapters.MoviesAdapter
 import com.sample.movienews.utils.Constant
 import com.sample.movienews.utils.Constant.MOVIES_TYPE_KEY
@@ -245,7 +245,7 @@ class MovieDetailsFragment : Fragment(), MoviesAdapter.OnMovieClickedListener {
     }
 
     private fun launchWatcherActivity() {
-        val intent = Intent(requireActivity(), WatcherActivity::class.java)
+        val intent = Intent(requireActivity(), TrailerPlayerActivity::class.java)
         intent.putExtra(NAME, videoName)
         intent.putExtra(SITE, videoKey)
         requireActivity().startActivityIfNeeded(intent, REQUEST_CODE)
